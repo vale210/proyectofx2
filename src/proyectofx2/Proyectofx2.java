@@ -15,13 +15,13 @@ import javafx.stage.Stage;
  * @author LENOVO
  */
 public class Proyectofx2 extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("lista.fxml"));
-        
+
         Scene scene = new Scene(root);
-        
+
         stage.setScene(scene);
         stage.show();
     }
