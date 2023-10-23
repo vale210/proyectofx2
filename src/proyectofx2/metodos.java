@@ -41,6 +41,18 @@ public class metodos {
         }
         
     }
+    public void eliminarproducto(){
+        String fecha = listaController.fecha;
+        Producto eliminar = new Producto();
+        for(Producto lista : pila){
+            eliminar = buscarfechavenci(fecha);
+            while (eliminar != null){
+                pila.remove(eliminar);
+                listaController.productos.remove(eliminar);
+                eliminar = buscarfechavenci(fecha);
+            }
+        }
+    }
     
     public Producto buscaridprodu(String id){
         Producto aux=new Producto();
@@ -113,7 +125,6 @@ public class metodos {
         return aux;
         
     }
-    
 }
 
 

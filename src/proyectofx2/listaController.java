@@ -33,7 +33,7 @@ public class listaController implements Initializable {
     int dia = calendario.get(Calendar.DATE);
     int mes = calendario.get(Calendar.MONTH);
     int año = calendario.get(Calendar.YEAR);
-    String fecha;
+    public static String fecha;
     @FXML
     private TableView<Producto>tabla;
     @FXML
@@ -50,7 +50,7 @@ public class listaController implements Initializable {
     @FXML
     private MenuItem btnpromedio,btnmayorpromedio,btnmenorpromedio,btnmayorprecio,btnmenorprecio,btnid,btnnombre,btnlote,btnvenci,btnprecio;
     @FXML
-    private Button btnmenor10, btnmenoe1, btnm1, btnm10, btncerrar, btnregistrar;
+    private Button btnmenor10, btnmenor1, btnm1, btnm10, btncerrar, btnregistrar;
     @FXML
     private TextField txtid,txtnombre,txtprecio,txtlote,txtvenci;
     @FXML
@@ -68,6 +68,68 @@ public class listaController implements Initializable {
             txtnombre.setText("");
             txtprecio.setText("");
         }
+        if(evt.equals(btnm10)){
+            calendario.add(Calendar.DATE, 10);
+            dia = calendario.get(Calendar.DATE);
+            mes = calendario.get(Calendar.MONTH);
+            año = calendario.get(Calendar.YEAR);
+            fecha = String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año);
+            txtlote.setText(fecha);
+            pila.eliminarproducto();
+            calendario.add(Calendar.DATE, 31);
+            dia = calendario.get(Calendar.DATE);
+            mes = calendario.get(Calendar.MONTH);
+            año = calendario.get(Calendar.YEAR);
+            txtvenci.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
+            calendario.add(Calendar.DATE, -31);   
+            
+        }
+        if(evt.equals(btnm1)){
+             calendario.add(Calendar.DATE, 1);
+            dia = calendario.get(Calendar.DATE);
+            mes = calendario.get(Calendar.MONTH);
+            año = calendario.get(Calendar.YEAR);
+            fecha = String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año);
+            txtlote.setText(fecha);
+            pila.eliminarproducto();
+            calendario.add(Calendar.DATE, 31);
+            dia = calendario.get(Calendar.DATE);
+            mes = calendario.get(Calendar.MONTH);
+            año = calendario.get(Calendar.YEAR);
+            txtvenci.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
+            calendario.add(Calendar.DATE, -31);   
+        }
+        if(evt.equals(btnmenor1)){
+             calendario.add(Calendar.DATE, -1);
+            dia = calendario.get(Calendar.DATE);
+            mes = calendario.get(Calendar.MONTH);
+            año = calendario.get(Calendar.YEAR);
+            fecha = String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año);
+            txtlote.setText(fecha);
+            pila.eliminarproducto();
+            calendario.add(Calendar.DATE, 31);
+            dia = calendario.get(Calendar.DATE);
+            mes = calendario.get(Calendar.MONTH);
+            año = calendario.get(Calendar.YEAR);
+            txtvenci.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
+            calendario.add(Calendar.DATE, -31);   
+        }
+            
+        if(evt.equals(btnmenor10)){
+             calendario.add(Calendar.DATE, -10);
+            dia = calendario.get(Calendar.DATE);
+            mes = calendario.get(Calendar.MONTH);
+            año = calendario.get(Calendar.YEAR);
+            fecha = String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año);
+            txtlote.setText(fecha);
+            pila.eliminarproducto();
+            calendario.add(Calendar.DATE, 31);
+            dia = calendario.get(Calendar.DATE);
+            mes = calendario.get(Calendar.MONTH);
+            año = calendario.get(Calendar.YEAR);
+            txtvenci.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
+            calendario.add(Calendar.DATE, -31);   
+        }
     }
     @Override       
     public void initialize(URL url, ResourceBundle rb) {
@@ -80,7 +142,8 @@ public class listaController implements Initializable {
         dia = calendario.get(Calendar.DATE);
         mes = calendario.get(Calendar.MONTH);
         año = calendario.get(Calendar.YEAR);
-        txtlote.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
+        fecha =String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año);
+        txtlote.setText(fecha);
         idprodu.setCellValueFactory(new PropertyValueFactory<Producto, String>("idprodu"));
         nomprodu.setCellValueFactory(new PropertyValueFactory<Producto, String>("nomprodu"));
         felote.setCellValueFactory(new PropertyValueFactory<Producto, String>("felote"));
