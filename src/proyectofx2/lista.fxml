@@ -47,13 +47,13 @@
       <Button fx:id="btnm10" layoutX="262.0" layoutY="453.0" mnemonicParsing="false" onAction="#actionevent" text="+10" />
       <Button fx:id="btnmenoe1" layoutX="175.0" layoutY="453.0" mnemonicParsing="false" onAction="#actionevent" text="-1" />
       <Label layoutX="26.0" layoutY="457.0" text="Modificar fecha:" />
-      <TableView layoutX="11.0" layoutY="147.0" prefHeight="299.0" prefWidth="665.0">
+      <TableView fx:id="tabla" layoutX="11.0" layoutY="147.0" prefHeight="299.0" prefWidth="665.0">
         <columns>
-          <TableColumn prefWidth="133.0" text="Id del producto" />
-          <TableColumn prefWidth="133.0" text="Nombre del producto" />
-            <TableColumn prefWidth="133.0" text="Fecha lote" />
-            <TableColumn prefWidth="133.0" text="Fecha vencimiento" />
-            <TableColumn prefWidth="133.0" text="Precio" />
+          <TableColumn fx:id="idprodu" prefWidth="133.0" text="Id del producto" />
+          <TableColumn fx:id="nomprodu" prefWidth="133.0" text="Nombre del producto" />
+            <TableColumn fx:id="felote" prefWidth="133.0" text="Fecha lote" />
+            <TableColumn fx:id="fevenci" prefWidth="133.0" text="Fecha vencimiento" />
+            <TableColumn fx:id="precio" prefWidth="133.0" text="Precio" />
         </columns>
       </TableView>
     </children>

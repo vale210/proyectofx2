@@ -14,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,7 +29,15 @@ public class metodos {
     }
     
     public void pushprodu(Producto v){
-        pila.push(v);
+        if(buscaridprodu(v.idprodu) != null){
+            JOptionPane.showMessageDialog(null, "El id del producto ya se encuentra registrado" );
+            
+        }else if(buscarnomprodu(v.nomprodu) != null){
+            JOptionPane.showMessageDialog(null, "El nombre del producto ya se encuentra registrado");
+        }else{
+            pila.push(v);
+            JOptionPane.showMessageDialog(null, "El producto esta registrado");
+        }
         
     }
     
