@@ -31,11 +31,11 @@
             <MenuItem fx:id="btnprecio" mnemonicParsing="false" onAction="#actionevent" text="Precio" />
         </items>
       </MenuButton>
-      <TextField fx:id="txtnombre" layoutX="206.0" layoutY="51.0" />
+      <TextField fx:id="txtnombre" layoutX="206.0" layoutY="51.0" onKeyTyped="#keyevent" />
       <TextField fx:id="txtlote" disable="true" editable="false" layoutX="26.0" layoutY="107.0" />
       <TextField fx:id="txtvenci" disable="true" editable="false" layoutX="206.0" layoutY="107.0" />
-      <TextField fx:id="txtid" layoutX="26.0" layoutY="51.0" />
-      <TextField fx:id="txtprecio" layoutX="384.0" layoutY="51.0" />
+      <TextField fx:id="txtid" layoutX="26.0" layoutY="51.0" onKeyTyped="#keyevent" />
+      <TextField fx:id="txtprecio" layoutX="384.0" layoutY="51.0" onKeyTyped="#keyevent" />
       <Label layoutX="70.0" layoutY="30.0" text="Id producto" />
       <Label layoutX="231.0" layoutY="86.0" text="Fecha vencimiento" />
       <Label layoutX="233.0" layoutY="30.0" text="Nombre producto" />

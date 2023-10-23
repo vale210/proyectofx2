@@ -160,8 +160,95 @@ public class metodos {
         }
         
     }
+    public float promedio(){
+        float suma = 0;
+        float promedio = 0;
+        for(Producto lista : pila){
+            suma = lista.getPrecio()+ suma;
+        }
+        promedio = suma/pila.size();
+        return promedio;
+    }  
+    public void menorpromedio(){
+        float promedio = promedio();
+        for (Producto lista : pila){
+            if(lista.precio<promedio){
+                JOptionPane.showMessageDialog(null, "Los productos con un precio menor al promedio son:\n"
+                                                                        + "id: " + lista.idprodu+"\n"
+                                                                        + "nombre: " + lista.nomprodu+"\n"
+                                                                        + "fecha lote: "  + lista.felote+"\n"
+                                                                        + "fecha vencimiento: " + lista.fevenci+"\n"
+                                                                        + "precio: " + lista.precio);
+            }
+        }
+    }
        
-        
+     public void mayorpromedio(){
+        float promedio = promedio();
+        for (Producto lista : pila){
+            if(lista.precio>promedio){
+                JOptionPane.showMessageDialog(null, "Los productos con un precio mayor al promedio son:\n"
+                                                                        + "id: " + lista.idprodu+"\n"
+                                                                        + "nombre: " + lista.nomprodu+"\n"
+                                                                        + "fecha lote: "  + lista.felote+"\n"
+                                                                        + "fecha vencimiento: " + lista.fevenci+"\n"
+                                                                        + "precio: " + lista.precio);
+            }
+        }
+    }
+     
+    public Producto mayor(){
+         Producto mayor = new Producto();
+         float precio = 0;
+         for (Producto lista : pila){
+             if(lista.precio>precio){
+                 mayor = lista;
+                
+             }     
+         }
+         return mayor;
+    }
+    public void mayorprecio(){
+        Producto mayor = mayor();
+        for(Producto lista : pila){
+            if (lista.precio>mayor.precio){
+                mayor=lista;
+            }
+        }
+        for (Producto lista : pila){
+            if (lista.precio==mayor.precio){
+                   JOptionPane.showMessageDialog(null, "El producto con el precio mas alto es:\n"
+                                                                        + "id: " + lista.idprodu+"\n"
+                                                                        + "nombre: " + lista.nomprodu+"\n"
+                                                                        + "fecha lote: "  + lista.felote+"\n"
+                                                                        + "fecha vencimiento: " + lista.fevenci+"\n"
+                                                                        + "precio: " + lista.precio);
+                   
+            }
+        }
+            
+    }
+    
+    public void menorprecio(){
+        Producto menor = mayor();
+        for(Producto lista : pila){
+            if (lista.precio<menor.precio){
+                menor=lista;
+            }
+        }
+        for (Producto lista : pila){
+            if (lista.precio==menor.precio){
+                   JOptionPane.showMessageDialog(null, "El producto con el precio mas alto es:\n"
+                                                                        + "id: " + lista.idprodu+"\n"
+                                                                        + "nombre: " + lista.nomprodu+"\n"
+                                                                        + "fecha lote: "  + lista.felote+"\n"
+                                                                        + "fecha vencimiento: " + lista.fevenci+"\n"
+                                                                        + "precio: " + lista.precio);
+                   
+            }
+        }
+            
+    }
 }
 
 

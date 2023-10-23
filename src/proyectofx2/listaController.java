@@ -20,6 +20,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -149,6 +150,39 @@ public class listaController implements Initializable {
             if(evt.equals(btnprecio)){
             Float precio = Float.parseFloat(JOptionPane.showInputDialog("Ingrese el precio que desea buscar"));
             pila.listarprecio(precio);
+        }
+        if(evt.equals(btnpromedio)){
+            float promedio=pila.promedio();
+            JOptionPane.showMessageDialog(null, "El promedio de precio es: "+ promedio);
+        }
+        if (evt.equals(btnmayorpromedio)){
+            pila.mayorpromedio();
+        }
+        if (evt.equals(btnmenorpromedio)){
+            pila.menorpromedio();
+        }
+        if (evt.equals(btnmayorprecio)){
+            pila.mayorprecio();
+        }
+        if (evt.equals(btnmenorprecio)){
+            pila.menorprecio();
+        }
+        if (evt.equals(btncerrar)){
+            System.exit(0);
+        }
+    }
+    @FXML
+    private void keyevent(KeyEvent e){
+        Object evt=e.getSource();
+        if(evt.equals(txtid) || evt.equals(txtprecio)){
+            if(!Character.isDigit(e.getCharacter().charAt(0))){
+                e.consume();
+            }
+        }
+        if(evt.equals(txtnombre)){
+            if(!Character.isLetter(e.getCharacter().charAt(0))){
+                e.consume();
+            }
         }
     }
     @Override       
