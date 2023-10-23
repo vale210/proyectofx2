@@ -82,21 +82,6 @@ public class metodos {
         aux=null;
         return aux;
     }
-    
-    public Producto buscarfechalote(String fechalote){
-         Producto aux=new Producto();
-        int i=0;
-        while(i<pila.size()){
-            aux=(Producto) pila.get(i);
-            if(aux.felote.equals(fechalote))
-                return aux;
-            i++;
-                
-        }
-        aux=null;
-        return aux;
-        
-    }
     public Producto buscarfechavenci(String fecvenci){
          Producto aux=new Producto();
         int i=0;
@@ -111,20 +96,72 @@ public class metodos {
         return aux;
     }
     
-    public Producto buscarprecio(float precio){
-        Producto aux=new Producto();
-        int i=0;
-        while(i<pila.size()){
-            aux=(Producto) pila.get(i);
-            if(aux.precio == precio)
-                return aux;
-            i++;
-                
+    public void listarprecio(float precio){
+        for(Producto lista : pila){
+            if(lista.precio == precio){
+                JOptionPane.showMessageDialog(null, "El producto con el precio buscado es:\n"
+                                                                        + "id: " + lista.idprodu+"\n"
+                                                                        + "nombre: " + lista.nomprodu+"\n"
+                                                                        + "fecha lote: "  + lista.felote+"\n"
+                                                                        + "fecha vencimiento: " + lista.fevenci+"\n"
+                                                                        + "precio: " + lista.precio);
+            }
+        }   
+    }
+    public void listarid(String id){
+        for(Producto lista : pila){
+            if(lista.idprodu.equals(id)){
+                JOptionPane.showMessageDialog(null, "El producto con el id buscado es:\n"
+                                                                        + "id: " + lista.idprodu+"\n"
+                                                                        + "nombre: " + lista.nomprodu+"\n"
+                                                                        + "fecha lote: "  + lista.felote+"\n"
+                                                                        + "fecha vencimiento: " + lista.fevenci+"\n"
+                                                                        + "precio: " + lista.precio);
+            }
         }
-        aux=null;
-        return aux;
         
     }
+     public void listarnom(String nom){
+        for(Producto lista : pila){
+            if(lista.nomprodu.equals(nom)){
+                JOptionPane.showMessageDialog(null, "El producto con el nombre buscado es:\n"
+                                                                        + "id: " + lista.idprodu+"\n"
+                                                                        + "nombre: " + lista.nomprodu+"\n"
+                                                                        + "fecha lote: "  + lista.felote+"\n"
+                                                                        + "fecha vencimiento: " + lista.fevenci+"\n"
+                                                                        + "precio: " + lista.precio);
+            }
+        }
+        
+    }
+      public void listarfechalote(String lote){
+        for(Producto lista : pila){
+            if(lista.felote.equals(lote)){
+                JOptionPane.showMessageDialog(null, "El producto con la fecha lote buscada es:\n"
+                                                                        + "id: " + lista.idprodu+"\n"
+                                                                        + "nombre: " + lista.nomprodu+"\n"
+                                                                        + "fecha lote: "  + lista.felote+"\n"
+                                                                        + "fecha vencimiento: " + lista.fevenci+"\n"
+                                                                        + "precio: " + lista.precio);
+            }
+        }
+        
+    }
+       public void listarfechavenci(String venci){
+        for(Producto lista : pila){
+            if(lista.fevenci.equals(venci)){
+                JOptionPane.showMessageDialog(null, "El producto con la fecha de vencimiento buscada es:\n"
+                                                                        + "id: " + lista.idprodu+"\n"
+                                                                        + "nombre: " + lista.nomprodu+"\n"
+                                                                        + "fecha lote: "  + lista.felote+"\n"
+                                                                        + "fecha vencimiento: " + lista.fevenci+"\n"
+                                                                        + "precio: " + lista.precio);
+            }
+        }
+        
+    }
+       
+        
 }
 
 

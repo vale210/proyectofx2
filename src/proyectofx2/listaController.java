@@ -130,6 +130,26 @@ public class listaController implements Initializable {
             txtvenci.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
             calendario.add(Calendar.DATE, -31);   
         }
+        if(evt.equals(btnid)){
+            String id = JOptionPane.showInputDialog("Ingrese el id que desea buscar");
+            pila.listarid(id);
+        }
+         if(evt.equals(btnnombre)){
+            String nom = JOptionPane.showInputDialog("Ingrese el nombre que desea buscar");
+            pila.listarnom(nom);
+        }
+          if(evt.equals(btnlote)){
+            String lote = JOptionPane.showInputDialog("Ingrese la fecha lote que desea buscar");
+            pila.listarfechalote(lote);
+        }
+           if(evt.equals(btnvenci)){
+            String venci = JOptionPane.showInputDialog("Ingrese la fecha de vencimiento que desea buscar");
+            pila.listarfechavenci(venci);
+        }
+            if(evt.equals(btnprecio)){
+            Float precio = Float.parseFloat(JOptionPane.showInputDialog("Ingrese el precio que desea buscar"));
+            pila.listarprecio(precio);
+        }
     }
     @Override       
     public void initialize(URL url, ResourceBundle rb) {
