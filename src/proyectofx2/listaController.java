@@ -19,6 +19,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javax.swing.JOptionPane;
 
 /**
@@ -56,7 +57,16 @@ public class listaController implements Initializable {
     private void actionevent(ActionEvent e){
         Object evt=e.getSource();
         if(evt.equals(btnregistrar)){
-            
+            String id = txtid.getText();
+            String nom = txtnombre.getText();
+            String lote = txtlote.getText();
+            String venci = txtvenci.getText();
+            float pre = Float.parseFloat(txtprecio.getText());
+            Producto v = new Producto(id, nom, lote, venci, pre);
+            pila.pushprodu(v);
+            txtid.setText("");
+            txtnombre.setText("");
+            txtprecio.setText("");
         }
     }
     @Override       
@@ -71,6 +81,13 @@ public class listaController implements Initializable {
         mes = calendario.get(Calendar.MONTH);
         año = calendario.get(Calendar.YEAR);
         txtlote.setText(String.valueOf(dia)+ "/" + String.valueOf(mes+1)+ "/" + String.valueOf(año));
+        idprodu.setCellValueFactory(new PropertyValueFactory<Producto, String>("idprodu"));
+        nomprodu.setCellValueFactory(new PropertyValueFactory<Producto, String>("nomprodu"));
+        felote.setCellValueFactory(new PropertyValueFactory<Producto, String>("felote"));
+        fevenci.setCellValueFactory(new PropertyValueFactory<Producto, String>("fevenci"));
+        precio.setCellValueFactory(new PropertyValueFactory<Producto, Float>("precio"));
+        tabla.setItems(productos);
+        
         // TODO
     }    
     

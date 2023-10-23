@@ -36,6 +36,7 @@ public class metodos {
             JOptionPane.showMessageDialog(null, "El nombre del producto ya se encuentra registrado");
         }else{
             pila.push(v);
+            listaController.productos.add(v);
             JOptionPane.showMessageDialog(null, "El producto esta registrado");
         }
         
